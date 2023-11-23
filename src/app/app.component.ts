@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Event, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +19,12 @@ export class AppComponent {
   onChangeLength(target: EventTarget){
     const value = (<HTMLInputElement>target).value;
     const parsedValue = parseInt(value);
+    console.log(parsedValue);
 
     if(!isNaN(parsedValue)){
       this.length = parsedValue;
     }
+
   }
 
   onChangeUseLetters(){
